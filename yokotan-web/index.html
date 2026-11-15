@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es" data-type="other">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-type" content="other">
+  <meta name="site-kind" content="other">
+  <title>Yokot'an · Asentamientos en Tabasco</title>
+  <meta name="description" content="Investigación sobre los asentamientos de la cultura yokot'an en Tabasco, mapa GPS y cómo aplica la trilateración al proyecto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#inicio" class="brand">Yokot'an</a>
+    <nav aria-label="Secciones">
+      <a href="#contexto">Contexto</a>
+      <a href="#ubicaciones">Ubicaciones</a>
+      <a href="#mapa">Mapa GPS</a>
+      <a href="#trilateracion">Trilateración</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. HERO -->
+    <section id="inicio" class="hero" data-enter>
+      <p class="eyebrow" data-enter>Proyecto transversal · Geografía y cultura</p>
+      <h1 class="hero-title" data-enter>
+        <span class="line"><span>Dónde viven</span></span>
+        <span class="line"><span>los <em>yokot'an</em></span></span>
+      </h1>
+      <p class="hero-lede" data-enter>
+        Un mapa de los asentamientos de la cultura yokot'an en Tabasco, y la explicación de cómo
+        la trilateración permite ubicarlos con GPS.
+      </p>
+      <div class="hero-actions" data-enter>
+        <a class="btn btn-primary" href="#mapa">Ver el mapa</a>
+        <a class="btn btn-ghost" href="#trilateracion">Cómo funciona</a>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- 2. CONTEXTO -->
+    <section id="contexto" class="section">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">01 · Contexto</p>
+          <h2 class="h2">Una lengua y un pueblo presentes en el centro de Tabasco</h2>
+        </div>
+        <div class="prose reveal">
+          <p>Los yokot'an, también llamados chontales de Tabasco, se concentran en los municipios de
+          Nacajuca, Centro, Centla, Macuspana, Jonuta y Jalpa de Méndez.</p>
+          <p>"Chontal" viene del náhuatl y significa forasteros. Ellos llaman a su lengua
+          <em>yokot'an</em>, que quiere decir lengua verdadera.</p>
+          <p>Hoy la lengua está perdiendo terreno: las generaciones jóvenes de comunidades como Tucta
+          ya no la hablan con fluidez.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CIFRAS -->
+    <section class="band" aria-label="Cifras">
+      <div class="wrap band-grid">
+        <div class="stat reveal">
+          <span class="stat-num" data-count="37072">0</span>
+          <span class="stat-label">hablantes en el censo 2010</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="6">0</span>
+          <span class="stat-label">municipios con presencia yokot'an</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="77">0</span>
+          <span class="stat-label">localidades identificadas en fuentes, no exhaustivo</span>
+        </div>
+      </div>
+      <p class="wrap note">Cifras según las fuentes citadas al final. Las de localidades varían entre
+        estudios y años.</p>
+    </section>
+
+    <!-- 4. ACTIVIDAD 1: UBICACIONES -->
+    <section id="ubicaciones" class="section">
+      <div class="wrap">
+        <p class="kicker">02 · Actividad 1</p>
+        <h2 class="h2">Localizar los asentamientos en el mapa de Tabasco</h2>
+        <p class="lede reveal">Buscamos localidades con presencia yokot'an en cada municipio. Cada una
+          se registra con su nombre y su municipio, y se marca como verificada cuando tiene
+          coordenadas del INEGI.</p>
+        <div class="muni-grid" id="municipios"></div>
+        <div class="loc-list" id="localidades" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 5. ACTIVIDAD 2: MAPA -->
+    <section id="mapa" class="section section-map">
+      <div class="wrap">
+        <p class="kicker">03 · Actividad 2</p>
+        <h2 class="h2">Mapa GPS de los asentamientos</h2>
+        <p class="lede reveal">Las marcas azules son cabeceras municipales (aproximadas). Las localidades
+          aparecerán cuando tengan coordenadas verificadas del INEGI.</p>
+      </div>
+      <div class="wrap map-wrap reveal">
+        <div id="map" role="region" aria-label="Mapa de Tabasco con los asentamientos"></div>
+        <p class="map-status" id="map-status"></p>
+      </div>
+    </section>
+
+    <!-- 6. TRILATERACIÓN -->
+    <section id="trilateracion" class="section">
+      <div class="wrap">
+        <p class="kicker">04 · Trilateración</p>
+        <h2 class="h2">Cómo se aplica la trilateración al proyecto</h2>
+        <p class="lede reveal">Con tres puntos de referencia de coordenadas conocidas, y la distancia desde
+          cada uno hasta un lugar, la posición exacta del lugar queda en la intersección de tres
+          círculos. Mueve el punto y observa cómo cambian las distancias.</p>
+
+        <div class="tri">
+          <svg id="tri-svg" viewBox="0 0 600 420" role="img" aria-label="Diagrama de trilateración con tres estaciones y un punto móvil">
+            <rect x="0" y="0" width="600" height="420" class="tri-bg"/>
+            <g id="tri-circles"></g>
+            <g id="tri-anchors"></g>
+            <circle id="tri-target" r="8" class="tri-target"/>
+            <circle id="tri-estimate" r="6" class="tri-estimate"/>
+            <line id="tri-err" class="tri-err" x1="0" y1="0" x2="0" y2="0"/>
+          </svg>
+          <div class="tri-panel">
+            <ol class="steps">
+              <li class="reveal"><strong>Tres estaciones.</strong> Son puntos con coordenadas conocidas (A, B y C).</li>
+              <li class="reveal"><strong>Tres distancias.</strong> Se mide la distancia de cada estación al lugar.</li>
+              <li class="reveal"><strong>Tres círculos.</strong> Cada distancia es el radio de un círculo centrado en su estación.</li>
+              <li class="reveal"><strong>Intersección.</strong> Donde se cruzan los círculos está la posición estimada.</li>
+            </ol>
+            <dl class="readout">
+              <div><dt>Distancia A</dt><dd id="dA">—</dd></div>
+              <div><dt>Distancia B</dt><dd id="dB">—</dd></div>
+              <div><dt>Distancia C</dt><dd id="dC">—</dd></div>
+              <div><dt>Error de estimación</dt><dd id="dErr">—</dd></div>
+            </dl>
+            <label class="noise">
+              <span>Ruido de medición</span>
+              <input type="range" id="noise" min="0" max="12" step="0.5" value="0">
+              <output id="noiseOut">0 px</output>
+            </label>
+            <p class="tri-hint">Arrastra el punto violeta, o tócalo en el celular.</p>
+          </div>
+        </div>
+        <p class="note">En el proyecto, las estaciones son puntos de INEGI con coordenadas conocidas, y las
+          distancias se miden con receptores GPS. La demostración usa kilómetros sobre un plano
+          local para simplificar el cálculo.</p>
+      </div>
+    </section>
+
+    <!-- 7. FUENTES -->
+    <section id="fuentes" class="section">
+      <div class="wrap">
+        <p class="kicker">05 · Fuentes</p>
+        <h2 class="h2">De dónde salen los datos</h2>
+        <ul class="sources" id="sources"></ul>
+        <p class="note">Las coordenadas de las localidades quedan pendientes hasta verificarlas en el catálogo
+          de localidades del INEGI. No se han inventado.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>Proyecto transversal · Yokot'an, Tabasco</span>
+      <a href="#inicio">Subir</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

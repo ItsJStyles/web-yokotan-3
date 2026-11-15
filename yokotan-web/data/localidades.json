@@ -1,0 +1,109 @@
+{
+  "fuentes": [
+    {
+      "titulo": "Catálogo de localidades, Marco Geoestadístico (INEGI)",
+      "url": "https://www.inegi.org.mx/app/ageeml/",
+      "nota": "Fuente oficial para las coordenadas de cada localidad. Pendiente de descarga y verificación."
+    },
+    {
+      "titulo": "Pueblos indígenas chontales de Tabasco",
+      "url": "https://elbibliote.com/resources/Temas/Historia/336_343_pueblos_indigenas_chontales_de_tabasco.pdf",
+      "nota": "Listado de localidades indígenas (1995) y municipios con presencia yokot'an."
+    },
+    {
+      "titulo": "Chontal Maya language",
+      "url": "https://en.wikipedia.org/wiki/Chontal_Maya_language",
+      "nota": "Referencia general sobre la lengua."
+    }
+  ],
+  "municipios": [
+    {
+      "nombre": "Nacajuca",
+      "cabecera": { "lat": 17.9500, "lon": -92.9700, "aprox": true },
+      "localidades_indigenas_referidas": ["Tucta", "Tapotzingo", "Guaytalpa", "Mazateupa", "Oxiacaque", "Guatacalca", "Tecoluta"]
+    },
+    {
+      "nombre": "Centro",
+      "cabecera": { "lat": 17.9892, "lon": -92.9303, "aprox": true },
+      "localidades_indigenas_referidas": ["Tamulté de las Sabanas", "Buenavista 1ª"]
+    },
+    {
+      "nombre": "Centla",
+      "cabecera": { "lat": 18.5300, "lon": -92.6500, "aprox": true },
+      "localidades_indigenas_referidas": []
+    },
+    {
+      "nombre": "Macuspana",
+      "cabecera": { "lat": 17.7600, "lon": -92.5900, "aprox": true },
+      "localidades_indigenas_referidas": ["San Carlos"]
+    },
+    {
+      "nombre": "Jonuta",
+      "cabecera": { "lat": 18.0800, "lon": -92.1300, "aprox": true },
+      "localidades_indigenas_referidas": []
+    },
+    {
+      "nombre": "Jalpa de Méndez",
+      "cabecera": { "lat": 18.1800, "lon": -92.8200, "aprox": true },
+      "localidades_indigenas_referidas": []
+    }
+  ],
+  "localidades": [
+    {
+      "nombre": "Tucta",
+      "nombre_yokot_an": "Tz'äk tz'it",
+      "municipio": "Nacajuca",
+      "coordenadas": null,
+      "estado_dato": "pendiente_inegi",
+      "nota": "A unos 4.3 km al noreste de la cabecera municipal. Muy pocos hablantes."
+    },
+    {
+      "nombre": "Tamulté de las Sabanas",
+      "nombre_yokot_an": null,
+      "municipio": "Centro",
+      "coordenadas": null,
+      "estado_dato": "pendiente_inegi",
+      "nota": "Estudio de 2023 sobre el desplazamiento de la lengua por el español."
+    },
+    {
+      "nombre": "Tapotzingo",
+      "nombre_yokot_an": null,
+      "municipio": "Nacajuca",
+      "coordenadas": null,
+      "estado_dato": "pendiente_inegi",
+      "nota": "Listado indígena de 1995."
+    },
+    {
+      "nombre": "Guaytalpa",
+      "nombre_yokot_an": null,
+      "municipio": "Nacajuca",
+      "coordenadas": null,
+      "estado_dato": "pendiente_inegi",
+      "nota": "Listado indígena de 1995."
+    },
+    {
+      "nombre": "Oxiacaque",
+      "nombre_yokot_an": null,
+      "municipio": "Nacajuca",
+      "coordenadas": null,
+      "estado_dato": "pendiente_inegi",
+      "nota": "Listado indígena de 1995."
+    },
+    {
+      "nombre": "Tecoluta",
+      "nombre_yokot_an": null,
+      "municipio": "Nacajuca",
+      "coordenadas": null,
+      "estado_dato": "pendiente_inegi",
+      "nota": "Listado indígena de 1995."
+    },
+    {
+      "nombre": "Buenavista 1ª",
+      "nombre_yokot_an": null,
+      "municipio": "Centro",
+      "coordenadas": null,
+      "estado_dato": "pendiente_inegi",
+      "nota": "Listado indígena de 1995."
+    }
+  ]
+}
